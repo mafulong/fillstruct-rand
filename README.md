@@ -1,6 +1,6 @@
-# fillstruct
+# fillstruct-rand
 
-fillstruct - fills a struct literal with random values
+fillstruct-rand - fills a struct literal with random values
 
 ---
 
@@ -92,7 +92,7 @@ becomes:
 
 
 ```
-after applying fillstruct.
+after applying fillstruct-rand.
 
 ```golang
 type C struct {

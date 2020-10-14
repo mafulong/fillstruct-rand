@@ -94,7 +94,7 @@ becomes:
 ```
 after applying fillstruct.
 
-```
+```golang
 type C struct {
 	C1 int64
 	C2 *int64

@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+// ToJSON util
 func ToJSON(v interface{}, indents ...bool) string {
 	var dt []byte
 	if len(indents) > 0 && indents[0] {
@@ -16,6 +17,7 @@ func ToJSON(v interface{}, indents ...bool) string {
 	return string(dt)
 }
 
+// ToStr util
 func ToStr(i interface{}) string {
 	if i == nil {
 		return ""

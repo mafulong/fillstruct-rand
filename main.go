@@ -18,6 +18,8 @@ import (
 )
 
 var errNotFound = errors.New("no struct literal found at selection")
+
+// W  represents that write file.
 var W string
 
 func main() {
@@ -98,9 +100,8 @@ func byLine(lprog []*packages.Package, path string, line int) (err error) {
 	max := func(a, b int) int {
 		if a > b {
 			return a
-		} else {
-			return b
 		}
+		return b
 	}
 	ast.Inspect(f, func(n ast.Node) bool {
 		lit, ok := n.(*ast.CompositeLit)
@@ -148,7 +149,7 @@ func byLine(lprog []*packages.Package, path string, line int) (err error) {
 		if err != nil {
 			return false
 		}
-		if Debug {
+		if debug {
 			log.Println(out.Code)
 		} else if len(W) > 0 {
 			content, err := ioutil.ReadFile(path)
@@ -175,7 +176,6 @@ func byLine(lprog []*packages.Package, path string, line int) (err error) {
 			var resBytes []byte
 			resBytes, err = imports.Process(path, []byte(res), nil)
 			if err != nil {
-				log.Fatal("%+v", err)
 				panic(err)
 			}
 			ioutil.WriteFile(path, resBytes, 0644)

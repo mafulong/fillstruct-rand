@@ -15,7 +15,8 @@ import (
 )
 
 var (
-	Debug = false
+	// debug. special
+	debug = false //debug使用
 )
 
 // litInfo contains the information about
@@ -36,6 +37,7 @@ type filler struct {
 	importNames map[string]string // import path -> import name
 }
 
+// RandChoice random choice
 func RandChoice(choices ...string) string {
 	if len(choices) == 0 {
 		return ""
@@ -44,6 +46,7 @@ func RandChoice(choices ...string) string {
 	return choices[i]
 }
 
+// RandomString  (n int, allowedChars ...[]rune)
 func RandomString(n int, allowedChars ...[]rune) string {
 	if n == 0 {
 		n = rand.Intn(15)
@@ -64,6 +67,7 @@ func RandomString(n int, allowedChars ...[]rune) string {
 	return string(b)
 }
 
+// GetRandValueByType func
 func GetRandValueByType(typeValue string, isStars ...bool) string {
 	isStar := false
 	if len(isStars) > 0 && isStars[0] {
@@ -111,6 +115,8 @@ func GetRandValueByType(typeValue string, isStars ...bool) string {
 	}
 	return ""
 }
+
+//GetRandValueByTypeV2  GetRandValueByTypeV2 return string
 func GetRandValueByTypeV2(typeValue types.BasicKind, isStars ...bool) string {
 	isStar := false
 	if len(isStars) > 0 && isStars[0] {

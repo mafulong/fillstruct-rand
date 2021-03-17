@@ -1,4 +1,4 @@
-module fillstruct-rand
+module github.com/mafulong/fillstruct-rand
 
 go 1.14
 

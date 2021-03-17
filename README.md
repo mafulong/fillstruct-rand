@@ -1,6 +1,10 @@
+[![GoDoc](https://godoc.org/github.com/mafulong/fillstruct-rand?status.svg)](https://pkg.go.dev/github.com/mafulong/fillstruct-rand)
+[![Codecov.io](https://codecov.io/github/mafulong/fillstruct-rand/coverage.svg?branch=main)](https://codecov.io/github/mafulong/fillstruct-rand?branch=main)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mafulong/fillstruct-rand)](https://goreportcard.com/report/github.com/mafulong/fillstruct-rand)
+
 # fillstruct-rand
 
-fillstruct-rand - fills a struct literal with random values
+fillstruct-rand. Fills a struct literal with random values, which can accelerate the development of unit test cases.
 
 ---
 
@@ -186,3 +190,7 @@ Flags:
 	-line:     required. line number of the struct literal
 	-w:        optional. when set this, the generated code will write to the file which names w
 
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.

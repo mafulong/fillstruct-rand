@@ -1,6 +1,6 @@
 PROJECT_NAME := "github.com/mafulong/fillstruct-rand"
 PKG := "$(PROJECT_NAME)"
-PKG_LIST := $(shell go list ${PKG}/... | grep -v /vendor/)
+PKG_LIST := $(shell go list ${PKG}/... | grep -v vendor )
 GO_FILES := $(shell find . -name '*.go' | grep -v /vendor/ | grep -v _test.go)
 
 .PHONY: all dep lint vet test test-coverage build clean
@@ -20,7 +20,8 @@ test: ## Run unittests
 	@go test -short ${PKG_LIST}
 
 test-coverage: ## Run tests with coverage
-	@go test -short -coverprofile cover.out -covermode=atomic ${PKG_LIST} ./...
+	@echo ${PKG_LIST}
+	@go test -short -coverprofile cover.out -covermode=atomic ${PKG_LIST}
 	@cat cover.out >> coverage.txt
 
 build: dep ## Build the binary file
